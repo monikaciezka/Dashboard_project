@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MusicSceneController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="35.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ToolBar prefHeight="35.0" prefWidth="801.0" GridPane.columnSpan="10">
+               <items>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goBack" text="Back" />
+               </items>
+            </ToolBar>
+            <Label fx:id="timeLabel" text="Label" GridPane.columnIndex="9" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@wifi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.halignment="LEFT">
+               <image>
+                  <Image url="@bluetooth.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <ImageView fx:id="musicCover" fitHeight="343.0" fitWidth="364.0" layoutX="229.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BastilleAlbum.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timeRemaining" layoutX="603.0" layoutY="407.0" prefHeight="27.0" prefWidth="38.0" text="time" textFill="WHITE" />
+      <Label fx:id="timePassed" layoutX="152.0" layoutY="407.0" prefHeight="27.0" prefWidth="38.0" text="time" textFill="WHITE" />
+      <GridPane layoutX="251.0" layoutY="444.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#nextSong" style="-fx-background-color: white;" text="skipLeft">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                     <image>
+                        <Image url="@skip.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#nextSong" style="-fx-background-color: white;" text="skipRight" GridPane.columnIndex="2">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@skip.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#stopMusic" prefWidth="40.0" style="-fx-background-color: white;" text="play" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fx:id="playButton" fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <Slider fx:id="slider" layoutX="198.0" layoutY="388.0" prefHeight="64.0" prefWidth="405.0" />
+   </children>
+</AnchorPane>
